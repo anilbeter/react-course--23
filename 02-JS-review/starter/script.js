@@ -209,4 +209,7 @@ spanishTranslation;
 
 console.log(book.reviews.librarything.reviewsCount);
 const countWrong = book.reviews.librarything.reviewsCount || "no data";
-countWrong;
+countWrong; // no data
+
+const countTrue = book.reviews.librarything.reviewsCount ?? "no data";
+countTrue; // 0
