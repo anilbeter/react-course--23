@@ -174,11 +174,19 @@ const updatedBook = {
 };
 updatedBook;
 
-const summary = `${title}, ${pages}-page long book, was written by ${author} and published in ${
-  publicationDate.split("-")[0]
-}`;
+const getYear = str => str.split("-")[0];
+const summary = `${title}, ${pages}-page long book, was written by ${author} and published in ${getYear(
+  publicationDate
+)}`;
 summary;
 
 const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
 pagesRange;
 console.log(`The book has ${pagesRange} range`);
+
+// Traditional way
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+
+console.log(getYear(publicationDate));
