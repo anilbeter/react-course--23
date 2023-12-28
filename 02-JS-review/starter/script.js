@@ -145,7 +145,7 @@ function getBook(id) {
 
 // Destructring
 
-const book = getBook(1);
+const book = getBook(2);
 book;
 
 // const title = book.title;
@@ -198,3 +198,15 @@ console.log(hasMovieAdaptation && "This book has a movie");
 // falsy: 0, "", null, undefined
 console.log("anil" && "Some string");
 console.log(0 && "Some string");
+
+console.log(true || "Some string");
+console.log(false || "Some string");
+
+console.log(book.translations.spanish);
+
+const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
+spanishTranslation;
+
+console.log(book.reviews.librarything.reviewsCount);
+const countWrong = book.reviews.librarything.reviewsCount || "no data";
+countWrong;
