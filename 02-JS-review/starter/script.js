@@ -190,3 +190,11 @@ console.log(`The book has ${pagesRange} range`);
 // }
 
 console.log(getYear(publicationDate));
+
+console.log(true && "Some string");
+console.log(false && "23");
+console.log(hasMovieAdaptation && "This book has a movie");
+
+// falsy: 0, "", null, undefined
+console.log("anil" && "Some string");
+console.log(0 && "Some string");
