@@ -145,7 +145,7 @@ function getBook(id) {
 
 // Destructring
 
-const book = getBook(2);
+const book = getBook(1);
 book;
 
 // const title = book.title;
@@ -213,3 +213,10 @@ countWrong; // no data
 
 const countTrue = book.reviews.librarything.reviewsCount ?? "no data";
 countTrue; // 0
+
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews?.goodreads.reviewsCount;
+  const librarything = book.reviews?.librarything?.reviewsCount ?? 0;
+  return goodreads + librarything;
+}
+console.log(getTotalReviewCount(book));
