@@ -143,8 +143,7 @@ function getBook(id) {
   return data.find(d => d.id === id);
 }
 
-// Destructring
-
+/*
 const book = getBook(1);
 book;
 
@@ -220,3 +219,20 @@ function getTotalReviewCount(book) {
   return goodreads + librarything;
 }
 console.log(getTotalReviewCount(book));
+*/
+
+const books = getBooks();
+books;
+
+const x = [1, 2, 3, 4, 5].map(i => i * 2);
+console.log(x); // [ 2, 4, 6, 8, 10 ]
+
+const titles = books.map(book => book.title);
+titles;
+
+// Using parantheses before curly brace for return object (like shorter way)
+const essentialData = books.map(book => ({
+  title: book.title,
+  author: book.author,
+}));
+essentialData;
