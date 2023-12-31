@@ -140,7 +140,7 @@ function getBooks() {
 }
 
 function getBook(id) {
-  return data.find(d => d.id === id);
+  return data.find((d) => d.id === id);
 }
 
 /*
@@ -224,27 +224,27 @@ console.log(getTotalReviewCount(book));
 const books = getBooks();
 books;
 
-const x = [1, 2, 3, 4, 5].map(i => i * 2);
+const x = [1, 2, 3, 4, 5].map((i) => i * 2);
 console.log(x); // [ 2, 4, 6, 8, 10 ]
 
-const titles = books.map(book => book.title);
+const titles = books.map((book) => book.title);
 titles;
 
 // Using parantheses before curly brace for return object (like shorter way)
-const essentialData = books.map(book => ({
+const essentialData = books.map((book) => ({
   title: book.title,
   author: book.author,
 }));
 essentialData;
 
 const longBooksWithMovie = books
-  .filter(book => book.pages > 500)
-  .filter(book => book.hasMovieAdaptation);
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation);
 longBooksWithMovie;
 
 const adventureBooks = books
-  .filter(books => books.genres.includes("adventure"))
-  .map(book => book.title);
+  .filter((books) => books.genres.includes("adventure"))
+  .map((book) => book.title);
 adventureBooks;
 
 const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
@@ -257,3 +257,22 @@ arr; // [ 3, 7, 1, 9, 6 ]
 
 const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
 sortedByPages;
+
+// 1) Add book object to array
+const newBook = {
+  id: 6,
+  title: "Harry Potter and the Chamber of Secrets",
+  author: "J. K. Rowling",
+};
+const booksAfterAdd = [...books, newBook];
+booksAfterAdd;
+
+// 2) Delete book object from array
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+booksAfterDelete;
+
+// 3) Update book object in the array
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+  book.id === 1 ? { ...book, pages: 23 } : book
+);
+booksAfterUpdate;
