@@ -1,9 +1,5 @@
 /* 
-const messages = [
-  "Learn React ⚛️",
-  "Apply for jobs 💼",
-  "Invest your new income 🤑",
-];
+
  */
 
 * {
@@ -28,7 +24,7 @@ body {
   justify-content: space-between;
 }
 
-.numbers > div {
+.numbers>div {
   height: 40px;
   aspect-ratio: 1;
   background-color: #e7e7e7;
