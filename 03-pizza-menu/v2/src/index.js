@@ -49,7 +49,7 @@ const pizzaData = [
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -59,17 +59,19 @@ function App() {
 
 function Header() {
   return (
-    <h1 style={{ color: "red", fontSize: "46px" }}>Fast React Pizza Co.</h1>
+    <header className="header">
+      <h1>Fast React Pizza Co.</h1>
+    </header>
   );
 }
 
 function Menu() {
   return (
-    <div>
+    <main className="menu">
       <h2>Our menu</h2>
       <Pizza />
       <Pizza />
-    </div>
+    </main>
   );
 }
 
@@ -81,7 +83,9 @@ function Footer() {
   console.log(isOpen);
 
   return (
-    <footer>{new Date().toLocaleTimeString()} We're currently open</footer>
+    <footer className="footer">
+      {new Date().toLocaleTimeString()} We're currently open
+    </footer>
   );
 }
 
@@ -90,7 +94,7 @@ function Pizza() {
     <div>
       {/* public folderında olduğu için direkt algılıyor pizzas folderını */}
       <img src="pizzas/salamino.jpg" alt="salamino pizza" />
-      <h2>Pizza Salamino</h2>
+      <h3>Pizza Salamino</h3>
       <p>Tomato, mozarella, and pepperoni</p>
     </div>
   );
