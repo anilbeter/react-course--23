@@ -19,6 +19,12 @@ function Intro() {}
 
 function SkillList() {}
 
+function Skill() {}
+
 function Avatar() {
-  return <div className="avatar"></div>;
+  return (
+    <div className>
+      <img className="avatar" src="ig.jpg" alt="anil" />
+    </div>
+  );
 }
