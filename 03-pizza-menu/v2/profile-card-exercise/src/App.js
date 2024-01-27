@@ -15,11 +15,39 @@ export default function App() {
   );
 }
 
-function Intro() {}
+function Intro() {
+  return (
+    <div>
+      <h1>Anil Beter</h1>
+      <p style={{}}>
+        Web & Game Development my biggest hobby, also there is a quote that I
+        love so much. "Dreams comes through those who truly want them."
+      </p>
+    </div>
+  );
+}
 
-function SkillList() {}
+function SkillList() {
+  return (
+    <div className="skill-list">
+      <Skill skill="HTML" emoji="💪" color="blue" />
+      <Skill skill="CSS" emoji="💪" color="red" />
+      <Skill skill="JAVASCRIPT" emoji="💪" color="aqua" />
+      <Skill skill="REACT" emoji="💪" color="olive" />
+      <Skill skill="C++" emoji="💪" color="gold" />
+      <Skill skill="C#" emoji="💪" color="purple" />
+    </div>
+  );
+}
 
-function Skill() {}
+function Skill({ skill, emoji, color }) {
+  return (
+    <div className="skill" style={{ backgroundColor: color }}>
+      <span>{skill}</span>
+      <span>{emoji}</span>
+    </div>
+  );
+}
 
 function Avatar() {
   return (
