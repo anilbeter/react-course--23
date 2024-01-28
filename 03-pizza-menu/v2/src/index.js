@@ -102,6 +102,8 @@ function Menu() {
 }
 
 function Pizza({ pizzaObj }) {
+  if (pizzaObj.soldOut) return null;
+
   return (
     <li className="pizza">
       <img src={pizzaObj.photoName} alt="salamino pizza" />
@@ -121,7 +123,13 @@ function Footer() {
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
 
-  // && -> (x && y) x false ise y ye bakılmayacak bile direkt x'i dönecek. ikisi de true ise y yi dönücek.
+  // if (!isOpen)
+  //   return (
+  //     <p>
+  //       We're happy to welcome you between {openHour}:00 and {closeHour}:00 :)
+  //     </p>
+  //   );
+
   return (
     <footer className="footer">
       {isOpen ? (
