@@ -43,7 +43,18 @@ export default function App() {
             </div>
 
             {/* Using child component */}
-            <StepMessage step={step}>{messages[step - 1]}</StepMessage>
+            <StepMessage step={step}>
+              {messages[step - 1]}
+              <div className="buttons">
+                <Button
+                  bgColor={"#e7e7e7"}
+                  textColor={"#333"}
+                  onClick={() => alert(`Learn how to ${messages[step - 1]}`)}
+                >
+                  Learn how
+                </Button>
+              </div>
+            </StepMessage>
 
             <div className="buttons">
               <Button
