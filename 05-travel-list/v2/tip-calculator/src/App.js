@@ -1,3 +1,4 @@
+import "./styles.css";
 import { useState } from "react";
 
 export default function App() {
@@ -13,7 +14,13 @@ function TipCalculator() {
   const [percentage1, setPercentage1] = useState(0);
   const [percentage2, setPercentage2] = useState(0);
 
-  const tip = bill * ((percentage1 + percentage2 / 2) / 100);
+  const tip = bill * ((percentage1 + percentage2) / 2 / 100);
+
+  function handleReset() {
+    setBill("");
+    setPercentage1(0);
+    setPercentage2(0);
+  }
 
   return (
     <div>
@@ -22,10 +29,15 @@ function TipCalculator() {
         How did you like the service?
       </SelectPercentage>
       <SelectPercentage percentage={percentage2} onSelect={setPercentage2}>
-        How did you friend like the service?
+        How did your friend like the service?
       </SelectPercentage>
-      <Output bill={bill} tip={tip} />
-      <Reset />
+
+      {bill > 0 && (
+        <>
+          <Output bill={bill} tip={tip} />
+          <Reset onReset={handleReset} />
+        </>
+      )}
     </div>
   );
 }
@@ -36,7 +48,7 @@ function BillInput({ bill, onSetBill }) {
       <label>How much was the bill?</label>
       <input
         type="text"
-        placeholder="bill value"
+        placeholder="Bill value"
         value={bill}
         onChange={(e) => onSetBill(Number(e.target.value))}
       />
@@ -64,11 +76,11 @@ function SelectPercentage({ children, percentage, onSelect }) {
 function Output({ bill, tip }) {
   return (
     <h3>
-      You pay {bill + tip} (${bill} + ${tip} tip)
+      You pay ${bill + tip} (${bill} + ${tip} tip)
     </h3>
   );
 }
 
-function Reset() {
-  return <button>Reset</button>;
+function Reset({ onReset }) {
+  return <button onClick={onReset}>Reset</button>;
 }
