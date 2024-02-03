@@ -140,6 +140,7 @@ label {
 
 input,
 select {
+  width: 100%;
   font-family: inherit;
   color: inherit;
   font-size: 1.5rem;
