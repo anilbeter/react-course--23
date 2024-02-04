@@ -137,7 +137,7 @@ function FormAddFriend({ onAddFriend }) {
 
 function FormSplitBill() {
   return (
-    <form className="fomt-split-bill">
+    <form className="form-split-bill">
       <h2>Split a bill with X</h2>
 
       <label>Bill value</label>
