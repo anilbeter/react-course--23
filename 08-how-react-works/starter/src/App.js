@@ -26,6 +26,12 @@ export default function App() {
   );
 }
 
+// Component instance
+console.log(<DifferentContent test={23} />);
+
+// Raw react element
+console.log(DifferentContent());
+
 function Tabbed({ content }) {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -35,6 +41,7 @@ function Tabbed({ content }) {
         <Tab num={0} activeTab={activeTab} onClick={setActiveTab} />
         <Tab num={1} activeTab={activeTab} onClick={setActiveTab} />
         <Tab num={2} activeTab={activeTab} onClick={setActiveTab} />
+
         <Tab num={3} activeTab={activeTab} onClick={setActiveTab} />
       </div>
 
