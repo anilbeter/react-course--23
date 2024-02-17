@@ -1,5 +1,4 @@
-import { hasSelectionSupport } from "@testing-library/user-event/dist/utils";
-import { useState, useSyncExternalStore } from "react";
+import { useState } from "react";
 
 const initialFriends = [
   {
@@ -83,6 +82,7 @@ export default function App() {
         <FormSplitBill
           selectedFriend={selectedFriend}
           onSplitBill={handleSplitBill}
+          key={selectedFriend.id}
         />
       )}
     </div>
