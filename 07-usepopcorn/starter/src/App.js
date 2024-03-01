@@ -346,6 +346,11 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     function () {
       if (!title) return;
       document.title = `Movie | ${title}`;
+
+      // cleaning up the title
+      return function () {
+        document.title = "usePopcorn";
+      };
     },
     [title]
   );
