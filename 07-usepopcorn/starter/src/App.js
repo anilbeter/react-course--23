@@ -129,6 +129,7 @@ export default function App() {
         return;
       }
 
+      handleCloseMovie();
       fetchMovies();
 
       // cleanup function
