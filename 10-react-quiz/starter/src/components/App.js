@@ -10,6 +10,7 @@ import Progress from './Progress.js';
 import FinishScreen from './FinishScreen.js';
 import Footer from './Footer.js';
 import Timer from './Timer.js';
+import { API } from './api.js';
 
 const SECS_PER_QUESTION = 30;
 
@@ -93,7 +94,7 @@ export default function App() {
   );
 
   useEffect(function () {
-    fetch('http://localhost:9000/questions')
+    fetch(API)
       .then((res) => res.json())
       .then((data) => dispatch({ type: 'dataReceived', payload: data }))
       .catch((err) => dispatch({ type: 'dataFailed' }));
