@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom';
+import styles from './PageNav.module.css';
 
 function PageNav() {
   // differences between <Link/> and <NavLink/>;
   // Actually, those are the same. But <NavLink/> would add "active" class to the selected element and this will help to styling elements via CSS.
 
   return (
-    <nav>
+    <nav className={styles.nav}>
       <ul>
         <li>
           <NavLink to="/">Home</NavLink>
