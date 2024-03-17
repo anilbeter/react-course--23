@@ -1,9 +1,10 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Product from './pages/Product';
-import Pricing from './pages/Pricing';
-import Homepage from './pages/Homepage';
-import PageNotFound from './pages/PageNotFound';
-import AppLayout from './pages/AppLayout';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Product from "./pages/Product";
+import Pricing from "./pages/Pricing";
+import Homepage from "./pages/Homepage";
+import PageNotFound from "./pages/PageNotFound";
+import AppLayout from "./pages/AppLayout";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="product" element={<Product />} />
         <Route path="pricing" element={<Pricing />} />
+        <Route path="login" element={<Login />} />
         <Route path="app" element={<AppLayout />} />
-        {/* if three routes that above won't match, the Route which have path="*" will be on the scene and will have called <PageNotFound /> component */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
